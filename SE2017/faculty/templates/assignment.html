@@ -1,0 +1,26 @@
+{% extends "navbar.html" %}
+{% block core %}
+ <a class="navbar-brand" id="navcourse" href="{% url 'faculty:CoursePage' %}">{{CourseName}}</a>
+{% endblock %}
+{% block addcontent %}
+<center>
+<br>
+
+{% if Assignments %}
+<ul>
+	<h1> Available Assignments </h1>
+    {% for document in Assignments %}
+    
+            
+	<a href="{{document.Assignment_File.url}}">{{ document.Assignment_File.name }}</a><br>
+    {% endfor %}
+<br>
+
+        
+</ul>
+{% else %}
+
+<h1 style="color:red;">OOPS! No documents</h1> 
+{% endif %}
+</center>
+{% endblock %}

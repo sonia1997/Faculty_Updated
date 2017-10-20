@@ -1,0 +1,6 @@
+<!--ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'map:overall' %}">Village View</a></li>
+            <li><a class="dropdown-item" href="{% url 'map:farms' %}">Farms</a></li>
+            <li><a class="dropdown-item" href="{% url 'map:wells' %}">Wells</a></li>
+            <li><a class="dropdown-item" href="{% url 'map:households' %}">Households</a></li>
+          </ul-->

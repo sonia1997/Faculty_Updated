@@ -1,0 +1,40 @@
+{% extends "navbar.html" %}
+{% block core %}
+ <a class="navbar-brand" id="navcourse" href="{% url 'faculty:CoursePage' %}">{{CourseName}}</a>
+{% endblock %}
+<head>
+<style>
+
+.upload{
+position:relative;
+right:40px;
+}
+</style>
+</head>
+{% block addcontent %}
+<br>
+<div class="jumbotron container">
+<center><h4>Upload Assignment </h4></center>
+<br>
+<center>
+<form action="" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+        {{ form.as_p }}
+        <input type="submit" style="margin:5 35 5 5;" onclick="clicked();" value="Upload"class="upload btn btn-success">
+        <input type="reset" value="Reset" class="btn btn-warning">
+    </form></center>
+<p id="demo"></p>
+<script>
+ function clicked() {
+
+	    var t='<div class="alert alert-success"> <strong>Successfully Uploaded!</strong></div>';
+document.getElementById("demo").innerHTML=t;
+        
+    }
+</script>
+</div>
+{% endblock %}
+
+
+

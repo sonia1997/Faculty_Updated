@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.popup{
+	position:absolute;
+	display: inline-block;
+	visibility: hidden;
+}
+.popup .popupText{	
+	display: inline-block;
+	background-color: rgba(68, 76, 81, 0.5);
+	color: #fff;
+	text-align: left;
+	padding: 10px;
+	z-index: 1;	
+}
+
+
+.popup .show{
+	visibility:visible;
+	-moz-animation : fadeIn 1s ease-in;
+	animation: fadeIn 1s ease-in;
+}
+
+
+@-moz-keyframes fadeIn{
+	0% {opacity:0;}
+	100% {opacity: 1;}
+}
+
+@keyframes fadeIn{
+	0% {opacity:0;}
+	100% {opacity: 1;}
+}
+</style>
+</head>
+<body>
+	<center>
+	<div onclick="myFunction('popup'+this.id)" id="1" style="cursor:pointer;" ><a> CLick Me </a>
+	
+	<div class = "popup" id = "popup1">
+	<div class = "popupText">This is the popup text<br>
+	This is the popup text<br>
+	This is the popup text<br>
+	This is the popup text<br>
+	This is the popup text<br>
+	</div>
+	</div>
+	</div></center>
+
+<script type="text/javascript">
+	function myFunction(id){
+		var popup = document.getElementById(id);
+		if ( popup.style.visibility == "visible")
+			popup.style.visibility = "hidden";
+		else
+			popup.style.visibility = "visible";
+	}
+</script>
+</body>
+</html>

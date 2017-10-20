@@ -1,0 +1,37 @@
+{% extends "navbar.html" %}
+{% block core %}
+ <a class="navbar-brand" id="navcourse" href="{% url 'faculty:CoursePage' %}">{{Course.Course_Name}}</a>
+{% endblock %}
+{% block addcontent %}
+<center><br><br>
+<div style="background-color:#ffff99 !important" class="jumbotron container">
+<h2>Course Credits:&nbsp{{Course.Course_Credits }}</h2><br>
+<h3>Course Description: </h3><br><i>{{Course.Course_description}}</i><br>
+<br>
+
+<form id = "citizenForm" action="{% url 'faculty:CoursePage' %}" method="post" style="display:none">
+{% csrf_token %}
+
+<textarea style="background-color:#d1e0e0 !important" rows="10" cols="50" name="coursedes">{{Course.Course_description}}</textarea>
+<br><br>
+ <input type="submit" name="action" class="btn btn-primary btn-md" value="Save">
+
+</form><br>
+<button id= "citizenBtn" class="btn btn-primary btn-md" onclick="showForm('citizenForm')">Edit</button>
+</div>
+<script>
+
+var showForm = function(id){
+  document.getElementById(id).style.display = '';
+}
+ var button = document.getElementById('citizenBtn')
+    button.addEventListener('click',hideshow,false);
+
+    function hideshow() {
+        
+        this.style.display = 'none'
+    }   
+</script>
+</center>
+{% endblock %}
+
